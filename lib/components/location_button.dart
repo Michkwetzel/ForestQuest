@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:forest_quest/enums.dart';
-import 'package:forest_quest/providers.dart';
+import 'package:forest_quest/config/enums.dart';
+import 'package:forest_quest/config/providers.dart';
 
 class LocationButton extends ConsumerStatefulWidget {
   final Location location;
@@ -41,7 +41,7 @@ class _LocationButtonState extends ConsumerState<LocationButton> {
             fontFamily: 'Sorts Mill Goudy',
             fontSize: 20,
             color: ref.watch(gameStateProvider).selectedLocation == widget.location
-                ? const Color.fromARGB(255, 106, 51, 31)
+                ? const Color(0xFFE7944A)
                 : hovering
                     ? Colors.green
                     : Colors.black,

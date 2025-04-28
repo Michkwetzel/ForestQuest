@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:forest_quest/providers.dart';
+import 'package:forest_quest/config/providers.dart';
 
 class AnimatedContainerCustom extends ConsumerWidget {
   const AnimatedContainerCustom({
@@ -30,7 +30,9 @@ class AnimatedContainerCustom extends ConsumerWidget {
       smallBoxheight = 0;
       bigBoxHeight = 0;
       // Handle game finished outside of build
-      WidgetsBinding.instance.addPostFrameCallback((_) {
+
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        await Future.delayed(Duration(seconds: 1));
         ref.read(gameStateProvider.notifier).setGameFinished();
       });
     }
@@ -38,7 +40,7 @@ class AnimatedContainerCustom extends ConsumerWidget {
       Positioned(
         right: 160,
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
+          duration: Duration(seconds: 1),
           decoration: BoxDecoration(color: Colors.white),
           width: 130,
           height: bigBoxHeight,
@@ -48,7 +50,7 @@ class AnimatedContainerCustom extends ConsumerWidget {
         top: 388,
         right: 195,
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
+          duration: Duration(seconds: 1),
           decoration: BoxDecoration(color: Colors.white),
           width: 20,
           height: smallBoxheight,

@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:forest_quest/enums.dart';
+import 'package:forest_quest/config/enums.dart';
 
 class GameState {
   GameStage stage;
@@ -71,23 +71,15 @@ class GameStateNotifier extends StateNotifier<GameState> {
 
   List<Forest> get randomForests => state.randomForests;
   List<Location> get randomLocations => state.randomLocations;
-  GameStage get stage => state.stage;
   Forest? get selectedForest => state.selectedForest;
   Location? get selectedLocation => state.selectedLocation;
 
-  void setGameStage(GameStage stage) {
-    state = state.copyWith(stage: stage);
-  }
-
   void setGameFinished() {
-    state = state.copyWith(gameFinished: true, stage: GameStage.end);
+    state = state.copyWith(gameFinished: true);
   }
 
-  List<Forest> getRandomForests() {
-    List<Forest> randomList = Forest.values.toList();
-    randomList.shuffle();
-    randomList = randomList.sublist(0, 4);
-    return randomList;
+  void restartGame() {
+    state = GameState.initial();
   }
 
   void onLocationSelect(Location location) {

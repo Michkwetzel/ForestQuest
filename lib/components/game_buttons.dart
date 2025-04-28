@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:forest_quest/forest_button.dart';
-import 'package:forest_quest/location_button.dart';
-import 'package:forest_quest/providers.dart';
+import 'package:forest_quest/components/forest_button.dart';
+import 'package:forest_quest/components/location_button.dart';
+import 'package:forest_quest/config/providers.dart';
 
 class GameButtons extends ConsumerWidget {
   const GameButtons({
@@ -15,9 +15,8 @@ class GameButtons extends ConsumerWidget {
     final randomLocations = ref.read(gameStateProvider.notifier).randomLocations;
     return Row(
       children: [
-        // Forest buttons column
         SizedBox(
-          width: 200, // Adjust width as needed
+          width: 200,
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: randomForests.length,
@@ -26,9 +25,8 @@ class GameButtons extends ConsumerWidget {
             },
           ),
         ),
-        // Location buttons column
         SizedBox(
-          width: 200, // Adjust width as needed
+          width: 200,
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: randomLocations.length,
