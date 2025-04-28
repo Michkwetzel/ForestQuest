@@ -5,12 +5,13 @@ import 'package:forest_quest/config/providers.dart';
 void main() {
   runApp(
     const ProviderScope(
-        child: MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
-        body: ForestQuest(),
+      child: MaterialApp(
+        title: 'Forest Quest',
+        home: Scaffold(
+          body: ForestQuest(),
+        ),
       ),
-    )),
+    ),
   );
 }
 
