@@ -1,17 +1,11 @@
-# forest_quest
+# Forest Quest
 
-A new Flutter project.
+A simple fact game to showcase my skills.
+To save time I built the game in a 700 x 700 square frame and left out any responsive components.
+Game is also built for desktop and can later optimize components to work on any platform
 
-## Getting Started
+## Tech
 
-This project is a starting point for a Flutter application.
+State Management: Riverpod
+Hosting: Firebase Hosting
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# ForestQuest
